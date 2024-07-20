@@ -7,5 +7,14 @@
     "urlCheck": false,
     "es6": true,
     "enhance": true
+  },
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "巴布森校友+",
+    "navigationBarTextStyle": "black"
   }
 }
