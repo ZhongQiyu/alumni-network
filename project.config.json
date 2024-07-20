@@ -1,0 +1,11 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "BabsonAlumni",
+  "description": "巴布森校友会小程序",
+  "appid": "your-app-id",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true
+  }
+}
