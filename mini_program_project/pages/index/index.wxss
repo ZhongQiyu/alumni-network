@@ -1,4 +1,3 @@
-/* 样式文件 */
 .container {
   padding: 20px;
 }

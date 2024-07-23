@@ -1,35 +1,32 @@
-// app.js
-
 App({
-  // å°ç¨‹åºåˆå§‹åŒ–æ—¶è§¦å‘
   onLaunch: function () {
-    // å±•ç¤ºæœ¬åœ°å­˜å‚¨èƒ½åŠ›
+    // Õ¹Ê¾±¾µØ´æ´¢ÄÜÁ¦
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // ç™»å½•
+    // µÇÂ¼
     wx.login({
       success: res => {
-        // å‘é€ res.code åˆ°åå°æ¢å– openId, sessionKey, unionId
-        console.log('å¾®ä¿¡ç™»å½•æˆåŠŸ', res)
-        // å‡è®¾è·å–åˆ°äº† openId
+        // ·¢ËÍ res.code µ½ºóÌ¨»»È¡ openId, sessionKey, unionId
+        console.log('Î¢ĞÅµÇÂ¼³É¹¦', res)
+        // ¼ÙÉè»ñÈ¡µ½ÁË openId
         this.globalData.openId = res.code
       }
     })
 
-    // è·å–ç”¨æˆ·ä¿¡æ¯
+    // »ñÈ¡ÓÃ»§ĞÅÏ¢
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          // å·²ç»æˆæƒï¼Œå¯ä»¥ç›´æ¥è°ƒç”¨ getUserInfo è·å–å¤´åƒæ˜µç§°ï¼Œä¸ä¼šå¼¹æ¡†
+          // ÒÑ¾­ÊÚÈ¨£¬¿ÉÒÔÖ±½Óµ÷ÓÃ getUserInfo »ñÈ¡Í·ÏñêÇ³Æ£¬²»»áµ¯¿ò
           wx.getUserInfo({
             success: res => {
-              // å¯ä»¥å°† res å‘é€ç»™åå°è§£ç å‡º unionId
+              // ¿ÉÒÔ½« res ·¢ËÍ¸øºóÌ¨½âÂë³ö unionId
               this.globalData.userInfo = res.userInfo
 
-              // ç”±äº getUserInfo æ˜¯ç½‘ç»œè¯·æ±‚ï¼Œå¯èƒ½ä¼šåœ¨ Page.onLoad ä¹‹åæ‰è¿”å›
-              // æ‰€ä»¥æ­¤å¤„åŠ å…¥ callback ä»¥é˜²æ­¢è¿™ç§æƒ…å†µ
+              // ÓÉÓÚ getUserInfo ÊÇÍøÂçÇëÇó£¬¿ÉÄÜ»áÔÚ Page.onLoad Ö®ºó²Å·µ»Ø
+              // ËùÒÔ´Ë´¦¼ÓÈë callback ÒÔ·ÀÖ¹ÕâÖÖÇé¿ö
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
@@ -40,35 +37,30 @@ App({
     })
   },
 
-  // å°ç¨‹åºæ˜¾ç¤ºæ—¶è§¦å‘
   onShow: function (options) {
-    console.log('å°ç¨‹åºæ˜¾ç¤º', options)
+    console.log('Ğ¡³ÌĞòÏÔÊ¾', options)
   },
 
-  // å°ç¨‹åºéšè—æ—¶è§¦å‘
   onHide: function () {
-    console.log('å°ç¨‹åºéšè—')
+    console.log('Ğ¡³ÌĞòÒş²Ø')
   },
 
-  // å°ç¨‹åºé”™è¯¯æ—¶è§¦å‘
   onError: function (msg) {
-    console.error('å°ç¨‹åºé”™è¯¯', msg)
+    console.error('Ğ¡³ÌĞò´íÎó', msg)
   },
 
-  // å…¨å±€æ•°æ®
   globalData: {
     userInfo: null,
     openId: null
   },
 
-  // å°è£…çš„ç½‘ç»œè¯·æ±‚æ–¹æ³•ï¼ˆå¾®ä¿¡ï¼‰
   requestWx: function (url, method, data, success, fail) {
     wx.request({
       url: url,
       method: method,
       data: data,
       header: {
-        'content-type': 'application/json' // é»˜è®¤å€¼
+        'content-type': 'application/json'
       },
       success: function (res) {
         if (res.statusCode == 200) {
@@ -83,7 +75,6 @@ App({
     })
   },
 
-  // å°è£…çš„ç½‘ç»œè¯·æ±‚æ–¹æ³•ï¼ˆé£ä¹¦ï¼‰
   requestFeishu: function (url, method, data, success, fail) {
     wx.request({
       url: url,
