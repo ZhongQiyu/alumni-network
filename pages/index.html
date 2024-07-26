@@ -4,57 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babson China Club Alumni Card</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>百森俱乐部校友卡</h1>
-        </header>
-        <main>
-            <section id="personal-center">
-                <h2>个人中心</h2>
-                <button id="loginButton">点击登录账号</button>
-            </section>
-            <section id="alumni-card">
-                <h2>百森俱乐部校友卡 Babson China Club</h2>
+        <div class="personal-center">
+            <div class="userinfo">
+                <img class="userinfo-avatar" src="path/to/avatar.png" alt="Avatar">
+                <span class="userinfo-nickname">点击登录账号</span>
+            </div>
+        </div>
+        <div class="alumni-card">
+            <div class="alumni-card-content">
+                <p>百森俱乐部校友卡 Babson China Club</p>
                 <button id="getCardButton">立即领取</button>
-            </section>
-            <section id="form-section" style="display:none;">
-                <h2>表1: 申领校友卡</h2>
-                <form id="alumni-form">
-                    <label for="name">姓名:</label>
-                    <input type="text" id="name" name="name" required>
-                    
-                    <label for="contact">联系方式:</label>
-                    <input type="text" id="contact" name="contact" required>
-                    
-                    <label for="occupation">职业信息:</label>
-                    <input type="text" id="occupation" name="occupation" required>
-                    
-                    <button type="submit">提交</button>
-                </form>
-            </section>
-        </main>
+            </div>
+        </div>
+        <div class="survey-form" id="surveyForm" style="display:none;">
+            <h2>表1: 申领校友卡</h2>
+            <form id="alumniForm">
+                <label for="name">姓名:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="contact">联系方式:</label>
+                <input type="text" id="contact" name="contact" required>
+                
+                <label for="occupation">职业信息:</label>
+                <input type="text" id="occupation" name="occupation" required>
+                
+                <button type="submit">提交</button>
+            </form>
+        </div>
         <footer>
             <p>校友会联系方式：XXXXXXXXXXXXX</p>
         </footer>
     </div>
-
-    <script>
-        document.getElementById('loginButton').addEventListener('click', function() {
-            alert("登录功能待实现");
-        });
-
-        document.getElementById('getCardButton').addEventListener('click', function() {
-            document.getElementById('form-section').style.display = 'block';
-        });
-
-        document.getElementById('alumni-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('表单提交成功');
-            // Here you can handle the form data submission (e.g., send it to a server)
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

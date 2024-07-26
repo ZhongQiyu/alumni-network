@@ -1,20 +1,15 @@
 {
-  "miniprogramRoot": "./",
-  "projectname": "BabsonAlumni",
-  "description": "巴布森校友会小程序",
-  "appid": "your-app-id",
+  "description": "项目配置文件。",
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
-    "enhance": true
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true
   },
-  "pages": [
-    "pages/index/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "巴布森校友+",
-    "navigationBarTextStyle": "black"
-  }
+  "compileType": "miniprogram",
+  "libVersion": "2.10.3",
+  "appid": "your-app-id",
+  "projectname": "alumni-network"
 }
