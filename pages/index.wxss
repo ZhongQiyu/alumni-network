@@ -1,8 +1,11 @@
-/* 样式文件 */
+/* index.wxss */
+
+/* 容器样式 */
 .container {
   padding: 20px;
 }
 
+/* 用户信息样式 */
 .userinfo {
   display: flex;
   align-items: center;
@@ -19,6 +22,26 @@
   font-size: 20px;
 }
 
+/* 分区样式 */
 .section {
   margin-top: 20px;
+}
+
+/* 表单项样式 */
+.form-item {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }

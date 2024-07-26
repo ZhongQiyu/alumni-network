@@ -1,3 +1,5 @@
+<!-- index.wxml -->
+
 <view class="container">
   <view class="userinfo">
     <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar" mode="cover"></image>
@@ -12,5 +14,29 @@
   <view class="section">
     <button bindtap="fetchDataFromFeishu">获取飞书数据</button>
     <text>{{feishuData}}</text>
+  </view>
+
+  <view class="section">
+    <button bindtap="login">点击登录账号</button>
+  </view>
+  <view class="section">
+    <button bindtap="getCard">立即领取</button>
+  </view>
+  <view class="section" wx:if="{{showForm}}">
+    <form bindsubmit="onSubmit">
+      <view class="form-item">
+        <label>姓名:</label>
+        <input type="text" name="name" />
+      </view>
+      <view class="form-item">
+        <label>联系方式:</label>
+        <input type="text" name="contact" />
+      </view>
+      <view class="form-item">
+        <label>职业信息:</label>
+        <input type="text" name="occupation" />
+      </view>
+      <button formType="submit">提交</button>
+    </form>
   </view>
 </view>

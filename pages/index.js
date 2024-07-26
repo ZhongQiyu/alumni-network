@@ -1,32 +1,45 @@
+// index.js
+
 Page({
   data: {
-    info: null
+    userInfo: {
+      avatarUrl: '/path/to/avatar.png', // 默认头像路径
+      nickName: '昵称' // 默认昵称
+    },
+    wxData: '',
+    feishuData: '',
+    showForm: false
   },
-
-  onLoad: function () {
-    this.getDataFromServer(this.handleServerResponse);
-  },
-
-  // 获取服务器数据的方法
-  getDataFromServer: function (callback) {
-    wx.request({
-      url: 'https://example.com/api/data',
-      method: 'GET',
-      success: function (res) {
-        if (callback) {
-          callback(res.data);
-        }
-      },
-      fail: function (err) {
-        console.error('请求失败', err);
-      }
+  login() {
+    wx.showToast({
+      title: '登录功能待实现',
+      icon: 'none'
     });
   },
-
-  // 处理服务器响应的回调函数
-  handleServerResponse: function (data) {
+  getCard() {
     this.setData({
-      info: data
+      showForm: true
+    });
+  },
+  onSubmit(e) {
+    wx.showToast({
+      title: '表单提交成功',
+      icon: 'success'
+    });
+    this.setData({
+      showForm: false
+    });
+  },
+  fetchDataFromWx() {
+    // 模拟获取微信数据
+    this.setData({
+      wxData: '微信数据'
+    });
+  },
+  fetchDataFromFeishu() {
+    // 模拟获取飞书数据
+    this.setData({
+      feishuData: '飞书数据'
     });
   }
-})
+});

@@ -14,11 +14,11 @@
         <main>
             <section id="personal-center">
                 <h2>个人中心</h2>
-                <button onclick="login()">点击登录账号</button>
+                <button id="loginButton">点击登录账号</button>
             </section>
             <section id="alumni-card">
                 <h2>百森俱乐部校友卡 Babson China Club</h2>
-                <button onclick="getCard()">立即领取</button>
+                <button id="getCardButton">立即领取</button>
             </section>
             <section id="form-section" style="display:none;">
                 <h2>表1: 申领校友卡</h2>
@@ -42,13 +42,13 @@
     </div>
 
     <script>
-        function login() {
+        document.getElementById('loginButton').addEventListener('click', function() {
             alert("登录功能待实现");
-        }
+        });
 
-        function getCard() {
+        document.getElementById('getCardButton').addEventListener('click', function() {
             document.getElementById('form-section').style.display = 'block';
-        }
+        });
 
         document.getElementById('alumni-form').addEventListener('submit', function(event) {
             event.preventDefault();

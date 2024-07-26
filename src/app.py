@@ -1,7 +1,34 @@
 # app.py
 
 import os
+import datetime
 import streamlit as st
+
+# 日志记录函数
+def log_message(message):
+    log_file = os.path.join(os.path.dirname(__file__), '../temp/OneDC_Updater/update.log')
+    timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    with open(log_file, 'a') as file:
+        file.write(f"{timestamp} - {message}\n")
+
+# 更新函数
+def perform_update():
+    log_message("Update started")
+    
+    try:
+        # 模拟下载新数据
+        log_message("Connecting to data source")
+        # 假设这里是下载数据的代码
+        log_message("Downloaded new data")
+        
+        # 模拟处理数据
+        log_message("Processing data")
+        # 假设这里是处理数据的代码
+        log_message("Data processed")
+        
+        log_message("Update completed successfully")
+    except Exception as e:
+        log_message(f"Update failed: {str(e)}")
 
 # 列出文件和目录的函数
 def list_files(startpath):
@@ -55,3 +82,14 @@ st.write("XXXXXXXXXXXXX")
 st.header("项目文件结构")
 project_dir = "C:\\Users\\xiaoy\\Downloads\\alumni-network"  # 你的项目目录路径
 list_files(project_dir)
+
+# 更新日志部分
+st.header("更新日志")
+if st.button("执行更新"):
+    perform_update()
+    st.success("更新已执行")
+
+log_file = os.path.join(project_dir, 'temp', 'OneDC_Updater', 'update.log')
+with open(log_file, 'r') as file:
+    log_contents = file.read()
+    st.text(log_contents)
