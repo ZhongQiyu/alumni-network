@@ -1,0 +1,16 @@
+# config.yaml
+
+database:
+  host: localhost
+  port: 5432
+  user: your_username
+  password: your_password
+  name: your_database
+
+api_keys:
+  service_1: "your_api_key_for_service_1"
+  service_2: "your_api_key_for_service_2"
+
+settings:
+  debug_mode: true
+  log_level: info

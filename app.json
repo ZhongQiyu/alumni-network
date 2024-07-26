@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index"  // 确保路径正确
+    "pages/index/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
