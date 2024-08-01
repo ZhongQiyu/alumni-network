@@ -1,3 +1,5 @@
+// login_page.js
+
 import React from 'react';
 
 function MyPage() {

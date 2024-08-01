@@ -1,3 +1,5 @@
+// dom.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const loginButton = document.getElementById('loginButton');
     const getCardButton = document.getElementById('getCardButton');

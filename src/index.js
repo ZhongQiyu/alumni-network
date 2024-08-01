@@ -1,3 +1,5 @@
+// index.js
+
 Page({
   data: {
     showForm: false,
@@ -20,6 +22,22 @@ Page({
     });
     this.setData({
       showForm: false
+    });
+  }
+});
+
+// pages/index/index.js
+Page({
+  onLoad: function() {
+    wx.request({
+      url: 'https://example.com/api/data',
+      method: 'GET',
+      success: function(res) {
+        console.log(res.data);
+      },
+      fail: function(err) {
+        console.error(err);
+      }
     });
   }
 });
