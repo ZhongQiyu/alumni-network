@@ -1,32 +1,34 @@
 <view class="container">
-  <view class="personal-center">
-    <view class="userinfo">
-      <image class="userinfo-avatar" src="/path/to/avatar.png"></image>
-      <text class="userinfo-nickname">点击登录账号</text>
-    </view>
+  <view class="header">
+    <view class="profile-pic"></view>
+    <text class="login-text">点击登录账号</text>
   </view>
-  <view class="alumni-card">
-    <view class="alumni-card-content">
-      <text>百森俱乐部校友卡 Babson China Club</text>
-      <button bindtap="getCard">立即领取</button>
+  
+  <view class="card">
+    <view class="club-info">
+      <text class="club-name">百森俱乐部校友卡</text>
+      <text class="club-subname">Babson China Club</text>
     </view>
+    <button class="claim-btn">立即领取</button>
   </view>
-  <view class="survey-form" wx:if="{{showForm}}">
-    <text>表1: 申领校友卡</text>
-    <form bindsubmit="onSubmit">
-      <view class="form-item">
-        <label>姓名:</label>
-        <input type="text" name="name" />
-      </view>
-      <view class="form-item">
-        <label>联系方式:</label>
-        <input type="text" name="contact" />
-      </view>
-      <view class="form-item">
-        <label>职业信息:</label>
-        <input type="text" name="occupation" />
-      </view>
-      <button formType="submit">提交</button>
-    </form>
+
+  <view class="contact-info">
+    <text class="contact-text">校友会联系方式：</text>
+    <text class="contact-detail">XXXXXXXXXXXXXXXXXXXXXXXXXX</text>
+  </view>
+
+  <view class="footer">
+    <view class="footer-item">
+      <image src="/assets/home.png" class="icon"></image>
+      <text>首页</text>
+    </view>
+    <view class="footer-item">
+      <image src="/assets/organization.png" class="icon"></image>
+      <text>组织</text>
+    </view>
+    <view class="footer-item">
+      <image src="/assets/profile.png" class="icon"></image>
+      <text>我的</text>
+    </view>
   </view>
 </view>

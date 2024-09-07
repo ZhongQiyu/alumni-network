@@ -1,0 +1,40 @@
+<!-- pages/profile/profile.wxml -->
+
+<view class="container">
+  <view class="header">
+    <text class="header-title">个人中心</text>
+  </view>
+  
+  <view class="user-info">
+    <image class="user-avatar" src="/images/default_avatar.png" />
+    <text class="login-text">点击登录账号</text>
+  </view>
+
+  <view class="card-container">
+    <view class="card">
+      <text class="card-title">百森俱乐部校友卡</text>
+      <text class="card-subtitle">Babson China Club</text>
+      <button class="get-card-btn">立即领取</button>
+    </view>
+  </view>
+  
+  <view class="contact-info">
+    <text>校友会联系方式：</text>
+    <text class="contact-text">XXXXXXXXXXXXXXXX</text>
+  </view>
+
+  <view class="footer">
+    <navigator url="/pages/index/index" class="footer-item">
+      <image src="/images/home.png" />
+      <text>首页</text>
+    </navigator>
+    <navigator url="/pages/organization/organization" class="footer-item">
+      <image src="/images/organization.png" />
+      <text>组织</text>
+    </navigator>
+    <navigator url="/pages/profile/profile" class="footer-item selected">
+      <image src="/images/profile.png" />
+      <text>我的</text>
+    </navigator>
+  </view>
+</view>

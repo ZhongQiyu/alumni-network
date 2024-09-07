@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="nav">
+    <view class="nav-item">首页</view>
+    <view class="nav-item">组织</view>
+    <view class="nav-item">我的</view>
+  </view>
+</view>
