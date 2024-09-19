@@ -1,9 +1,9 @@
 # utils.py
 
 import os
+import yaml
 import zipfile
 import datetime
-import yaml
 import psycopg2
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
@@ -37,7 +37,6 @@ class ProjectManager:
 
         print(f"项目文件已创建并压缩为 {self.project_name}.zip")
 
-
 class Logger:
     def __init__(self, project_name):
         self.log_file = os.path.join(project_name, "temp/OneDC_Updater", 'update.log')
@@ -62,7 +61,6 @@ class Logger:
         except Exception as e:
             self.log_message(f"Update failed: {str(e)}")
 
-
 class ConfigLoader:
     def __init__(self, file_path):
         self.file_path = file_path
@@ -82,7 +80,6 @@ class ConfigLoader:
         """
         return self.config['api_keys'].get(service_name)
 
-
 class DatabaseConnector:
     def __init__(self, config):
         self.config = config
@@ -100,7 +97,6 @@ class DatabaseConnector:
             dbname=self.config['database']['name']
         )
         return conn
-
 
 class DiagramGenerator:
     def __init__(self, output_path):
@@ -160,7 +156,6 @@ class DiagramGenerator:
         plt.savefig(self.output_path)
         print(f"System Design Diagram saved as {self.output_path}")
 
-
 class ImageConverter:
     def __init__(self, webp_dir, output_dir):
         self.webp_dir = webp_dir
@@ -178,7 +173,6 @@ class ImageConverter:
                 output_path = os.path.join(self.output_dir, os.path.splitext(filename)[0] + ".png")
                 img.save(output_path, "PNG")
         print(f"All WebP images converted and saved to {self.output_dir}")
-
 
 if __name__ == "__main__":
     # 项目管理

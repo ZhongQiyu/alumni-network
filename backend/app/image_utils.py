@@ -1,7 +1,7 @@
 # image_utils.py
 
-from PIL import Image
 import os
+from PIL import Image
 
 # 设置源文件夹和目标文件夹
 source_folder = '../database'
